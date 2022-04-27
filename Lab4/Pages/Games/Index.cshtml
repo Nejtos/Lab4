@@ -1,0 +1,83 @@
+﻿@page
+@model Lab4.Pages.Games.IndexModel
+
+@{
+    ViewData["Title"] = "Games";
+}
+
+<h1>List of games</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form>
+    <p>
+        <select asp-for="GameGenre" asp-items="Model.Genres">
+            <option value="">All</option>
+        </select>
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Games[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Games[0].RelaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Games[0].Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Games[0].Platforms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Games[0].Price)
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                    @Html.DisplayNameFor(model => model.Games[0].Rating)
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Games[0].GameImage)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Games) {
+        <tr>
+            <td valign="middle" style="font-weight:bold">
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td valign="middle">
+                @Html.DisplayFor(modelItem => item.RelaseDate)
+            </td>
+            <td valign="middle">
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td valign="middle">
+                @Html.DisplayFor(modelItem => item.Platforms)
+            </td>
+            <td valign="middle">
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td valign="middle">
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                <img src="@Url.Content(item.GameImage)" alt="" />
+            </td>
+            <td valign="middle">
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a>
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a>
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delate</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
