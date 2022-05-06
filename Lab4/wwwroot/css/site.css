@@ -3,9 +3,10 @@ html {
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+        font-family: Arial;
+    }
 }
 
 html {
@@ -16,3 +17,61 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+td a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 10px;
+    background: lightslategray;
+    border-radius: 2px;
+    text-transform: none;
+    color: #343434;
+    transition: all ease .5s;
+}
+
+td a:hover {
+    transform: scale(1.1);
+}
+tr:nth-child(2n+1) {
+    background-color: whitesmoke;
+}
+
+tr:nth-child(2n) {
+    background-color: lightgray;
+}
+
+img {
+    max-width: 125px !important;
+    max-height: 186px !important; 
+}
+
+a.a-sort {
+    position: relative;
+}
+
+    a.a-sort::before {
+        content: '';
+        position: absolute;
+        right: -1.5rem;
+        top: 0;
+        border-left: .5rem solid transparent;
+        border-right: .5rem solid transparent;
+        border-bottom: .5rem solid #343434;
+        clear: both;
+    }
+
+    a.a-sort::after {
+        content: '';
+        position: absolute;
+        right: -1.5rem;
+        bottom: 0;
+        border-left: .5rem solid transparent;
+        border-right: .5rem solid transparent;
+        border-top: .5rem solid #343434;
+        clear: both;
+    }
+
+    a {
+        color: #343434 !important;
+
+    }

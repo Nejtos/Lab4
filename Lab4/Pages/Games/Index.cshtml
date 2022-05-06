@@ -23,7 +23,9 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Games[0].Title)
+                <a class="a-sort" asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                    @Html.DisplayNameFor(model => model.Games[0].Title)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Games[0].RelaseDate)
@@ -38,7 +40,7 @@
                 @Html.DisplayNameFor(model => model.Games[0].Price)
             </th>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                <a class="a-sort" asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
                     @Html.DisplayNameFor(model => model.Games[0].Rating)
                 </a>
             </th>
