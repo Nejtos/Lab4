@@ -66,7 +66,7 @@ namespace Lab4.Pages.Games
                     throw;
                 }
             }
-
+            TempData["success"] = "Category updated successfully";
             return RedirectToPage("./Index");
         }
 

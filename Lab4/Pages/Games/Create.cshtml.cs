@@ -39,6 +39,7 @@ namespace Lab4.Pages.Games
             _context.Game.Add(Game);
             await _context.SaveChangesAsync();
 
+            TempData["success"] = "Category created successfully";
             return RedirectToPage("./Index");
         }
     }

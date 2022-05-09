@@ -54,6 +54,7 @@ namespace Lab4.Pages.Games
                 await _context.SaveChangesAsync();
             }
 
+            TempData["success"] = "Category deleted successfully";
             return RedirectToPage("./Index");
         }
     }
